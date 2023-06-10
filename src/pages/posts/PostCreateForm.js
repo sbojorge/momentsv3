@@ -33,14 +33,14 @@ function PostCreateForm() {
   };
 
   const handleChangeImage = (event) => {
-    if (event.target.files.length){
+    if (event.target.files.length) {
       URL.revokeObjectURL(image);
       setPostData({
         ...postData,
-        image: URL.createObjectURL(event.target.file[0])
-      })
+        image: URL.createObjectURL(event.target.files[0]),
+      });
     }
-  }
+  };
 
   const textFields = (
     <div className="text-center">
