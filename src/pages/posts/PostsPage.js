@@ -4,6 +4,7 @@ import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
+
 import Post from './Post';
 import Asset from '../../components/Asset';
 
@@ -14,11 +15,11 @@ import { axiosReq } from '../../api/axiosDefaults';
 
 import NoResults from '../../assets/no-results.png';
 
-function PostsPage({ message, filter="" }) {
-  const [posts, setPosts] = useState({ result: [] });
+function PostsPage({ message, filter= "" }) {
+  const [posts, setPosts] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
-  
+
   useEffect(() => {
     const fetchPosts = async () => {
       try {
@@ -40,7 +41,7 @@ function PostsPage({ message, filter="" }) {
         <p>Popular profiles mobile</p>
         {hasLoaded ? (
           <>
-            {posts.results.lenght ? (
+            {posts.results.length ? (
               posts.results.map((post) => (
                 <Post key={post.id} {...post} setPosts={setPosts} />
               ))
