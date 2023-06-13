@@ -1,7 +1,7 @@
 import NavBar from './components/NavBar';
 import styles from './App.module.css';
 import Container from 'react-bootstrap/Container';
-import {Route, Switch} from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import './api/axiosDefaults';
 import SignUpForm from './pages/auth/SignUpForm';
 import SignInForm from './pages/auth/SignInForm';
@@ -51,7 +51,7 @@ function App() {
           <Route exact path='/posts/create' render={() => <PostCreateForm />} />
           <Route exact path='/posts/:id' render={() => <PostPage />} />
           <Route render={() => <p>Page not found!</p>} />
-        </Switch>       
+        </Switch>
       </Container>
     </div>
       
