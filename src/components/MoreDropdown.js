@@ -22,7 +22,10 @@ const ThreeDots = React.forwardRef(({ onClick }, ref) => (
         <Dropdown.Toggle as={ThreeDots} />
         
   
-        <Dropdown.Menu className="text-center" >
+        <Dropdown.Menu
+          className="text-center"
+          popperConfig={{strategy:"fixed"}}
+        >
           <Dropdown.Item
            className={styles.DropdownItem}
            onClick={handleEdit}
